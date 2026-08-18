@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Car Parking System — JS Mini Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Smart Car Parking System</h1>
+  <p class="subtitle">Basement Level 1 — Modeled on Elante Mall, Chandigarh</p>
+
+  <div class="legend">
+    <span><i class="box available"></i> Available</span>
+    <span><i class="box booked"></i> Booked</span>
+  </div>
+
+  <div class="controls">
+    <label for="category-filter">Filter by category:</label>
+    <select id="category-filter">
+      <option value="all">All</option>
+      <option value="general">General</option>
+      <option value="reserved">Reserved</option>
+      <option value="ev">EV</option>
+      <option value="valet">Valet</option>
+    </select>
+  </div>
+
+  <div class="controls">
+    <button id="find-gateA-btn">Find Nearest Spot — Gate A</button>
+    <button id="find-gateB-btn">Find Nearest Spot — Gate B</button>
+  </div>
+
+  <div id="summary">Loading...</div>
+  <div id="revenue">Total Revenue: ₹0</div>
+  <div id="status-message"></div>
+
+  <div id="parking-grid" class="grid"></div>
+
+  <!-- Modal used for both booking an available spot and viewing/releasing a booked spot -->
+  <div id="booking-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="modal-close" class="close-btn">&times;</span>
+
+      <div id="booking-view">
+        <h2>Book Spot <span id="modal-spot-number"></span></h2>
+        <p>Price: ₹<span id="modal-price"></span> / hour</p>
+
+        <form id="booking-form">
+          <label for="input-name">Name</label>
+          <input type="text" id="input-name" required />
+
+          <label for="input-vehicle">Vehicle Number</label>
+          <input type="text" id="input-vehicle" required />
+
+          <label for="input-duration">Duration (hours)</label>
+          <input type="number" id="input-duration" min="1" max="24" required />
+
+          <p id="form-error" class="error"></p>
+
+          <button type="submit">Confirm Booking</button>
+        </form>
+      </div>
+
+      <div id="details-view" class="hidden">
+        <h2>Spot <span id="detail-spot-number"></span> — Booked</h2>
+        <p><strong>Name:</strong> <span id="detail-name"></span></p>
+        <p><strong>Vehicle:</strong> <span id="detail-vehicle"></span></p>
+        <p><strong>Duration:</strong> <span id="detail-duration"></span> hr(s)</p>
+        <p><strong>Amount:</strong> ₹<span id="detail-amount"></span></p>
+        <p><strong>Booked At:</strong> <span id="detail-time"></span></p>
+        <button id="release-btn">Checkout / Release Spot</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
