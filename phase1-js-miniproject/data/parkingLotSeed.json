@@ -1,0 +1,502 @@
+[
+  {
+    "spotNumber": "A1",
+    "floor": "Basement 1",
+    "row": "A",
+    "column": 1,
+    "category": "valet",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 100
+  },
+  {
+    "spotNumber": "A2",
+    "floor": "Basement 1",
+    "row": "A",
+    "column": 2,
+    "category": "valet",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 100
+  },
+  {
+    "spotNumber": "A3",
+    "floor": "Basement 1",
+    "row": "A",
+    "column": 3,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "A4",
+    "floor": "Basement 1",
+    "row": "A",
+    "column": 4,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "A5",
+    "floor": "Basement 1",
+    "row": "A",
+    "column": 5,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "A6",
+    "floor": "Basement 1",
+    "row": "A",
+    "column": 6,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "A7",
+    "floor": "Basement 1",
+    "row": "A",
+    "column": 7,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "A8",
+    "floor": "Basement 1",
+    "row": "A",
+    "column": 8,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "A9",
+    "floor": "Basement 1",
+    "row": "A",
+    "column": 9,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "A10",
+    "floor": "Basement 1",
+    "row": "A",
+    "column": 10,
+    "category": "reserved",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "B1",
+    "floor": "Basement 1",
+    "row": "B",
+    "column": 1,
+    "category": "reserved",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "B2",
+    "floor": "Basement 1",
+    "row": "B",
+    "column": 2,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "B3",
+    "floor": "Basement 1",
+    "row": "B",
+    "column": 3,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "B4",
+    "floor": "Basement 1",
+    "row": "B",
+    "column": 4,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "B5",
+    "floor": "Basement 1",
+    "row": "B",
+    "column": 5,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "B6",
+    "floor": "Basement 1",
+    "row": "B",
+    "column": 6,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "B7",
+    "floor": "Basement 1",
+    "row": "B",
+    "column": 7,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "B8",
+    "floor": "Basement 1",
+    "row": "B",
+    "column": 8,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "B9",
+    "floor": "Basement 1",
+    "row": "B",
+    "column": 9,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "B10",
+    "floor": "Basement 1",
+    "row": "B",
+    "column": 10,
+    "category": "reserved",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "C1",
+    "floor": "Basement 1",
+    "row": "C",
+    "column": 1,
+    "category": "reserved",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "C2",
+    "floor": "Basement 1",
+    "row": "C",
+    "column": 2,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "C3",
+    "floor": "Basement 1",
+    "row": "C",
+    "column": 3,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "C4",
+    "floor": "Basement 1",
+    "row": "C",
+    "column": 4,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "C5",
+    "floor": "Basement 1",
+    "row": "C",
+    "column": 5,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "C6",
+    "floor": "Basement 1",
+    "row": "C",
+    "column": 6,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "C7",
+    "floor": "Basement 1",
+    "row": "C",
+    "column": 7,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "C8",
+    "floor": "Basement 1",
+    "row": "C",
+    "column": 8,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "C9",
+    "floor": "Basement 1",
+    "row": "C",
+    "column": 9,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "C10",
+    "floor": "Basement 1",
+    "row": "C",
+    "column": 10,
+    "category": "reserved",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "D1",
+    "floor": "Basement 1",
+    "row": "D",
+    "column": 1,
+    "category": "reserved",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "D2",
+    "floor": "Basement 1",
+    "row": "D",
+    "column": 2,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "D3",
+    "floor": "Basement 1",
+    "row": "D",
+    "column": 3,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "D4",
+    "floor": "Basement 1",
+    "row": "D",
+    "column": 4,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "D5",
+    "floor": "Basement 1",
+    "row": "D",
+    "column": 5,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "D6",
+    "floor": "Basement 1",
+    "row": "D",
+    "column": 6,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "D7",
+    "floor": "Basement 1",
+    "row": "D",
+    "column": 7,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "D8",
+    "floor": "Basement 1",
+    "row": "D",
+    "column": 8,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "D9",
+    "floor": "Basement 1",
+    "row": "D",
+    "column": 9,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "D10",
+    "floor": "Basement 1",
+    "row": "D",
+    "column": 10,
+    "category": "reserved",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "E1",
+    "floor": "Basement 1",
+    "row": "E",
+    "column": 1,
+    "category": "reserved",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "E2",
+    "floor": "Basement 1",
+    "row": "E",
+    "column": 2,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "E3",
+    "floor": "Basement 1",
+    "row": "E",
+    "column": 3,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "E4",
+    "floor": "Basement 1",
+    "row": "E",
+    "column": 4,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "E5",
+    "floor": "Basement 1",
+    "row": "E",
+    "column": 5,
+    "category": "general",
+    "nearestGate": "gateA",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "E6",
+    "floor": "Basement 1",
+    "row": "E",
+    "column": 6,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "E7",
+    "floor": "Basement 1",
+    "row": "E",
+    "column": 7,
+    "category": "general",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  },
+  {
+    "spotNumber": "E8",
+    "floor": "Basement 1",
+    "row": "E",
+    "column": 8,
+    "category": "ev",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 60
+  },
+  {
+    "spotNumber": "E9",
+    "floor": "Basement 1",
+    "row": "E",
+    "column": 9,
+    "category": "ev",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 60
+  },
+  {
+    "spotNumber": "E10",
+    "floor": "Basement 1",
+    "row": "E",
+    "column": 10,
+    "category": "reserved",
+    "nearestGate": "gateB",
+    "status": "available",
+    "pricePerHour": 40
+  }
+]
