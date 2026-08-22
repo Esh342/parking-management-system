@@ -1,28 +1,18 @@
-// ============================================================
-// SMART CAR PARKING SYSTEM — JavaScript Mini Project (CA-1)
-// Every function below is labeled with the exact lecture topic
-// it demonstrates, so any team member can explain it directly.
-// ============================================================
 
-// ---- Variables & Data Types (Lec 1-2) ----
-let parkingSpots = [];        // array of spot objects, filled after fetch
-let currentSelectedSpot = null; // tracks which spot is open in the modal
-let categoryFilter = 'all';   // tracks the currently selected category filter
+let parkingSpots = [];       
+let currentSelectedSpot = null; 
+let categoryFilter = 'all';   
 
-// ============================================================
-// Lec 27-28: Async/Await, Fetch API, REST API Consumption, JSON Handling
-// ============================================================
 async function loadParkingSpots() {
   showStatus('Loading parking spots...');
   try {
-    const response = await fetch('data/parkingLotSeed.json'); // Fetch API
+    const response = await fetch('data/parkingLotSeed.json'); 
     if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status}`); // Error Handling (Lec 25-26)
+      throw new Error(`HTTP error: ${response.status}`); 
     }
-    const data = await response.json(); // JSON Handling
+    const data = await response.json();
     parkingSpots = mergeWithSavedBookings(data);
 
-    // Lec 23: Session Storage — restore the last-used filter for this browser tab/session
     categoryFilter = loadFilterFromSession();
     document.getElementById('category-filter').value = categoryFilter;
 
@@ -34,13 +24,9 @@ async function loadParkingSpots() {
   }
 }
 
-// ============================================================
-// Lec 23: Local Storage — acts as our "database" for CA-1
-// ============================================================
 function mergeWithSavedBookings(spots) {
   const savedBookings = JSON.parse(localStorage.getItem('bookings')) || {};
 
-  // Lec 13-14: Higher Order Function (map) + Lec 24: Spread operator
   return spots.map((spot) => {
     if (savedBookings[spot.spotNumber]) {
       return { ...spot, status: 'booked', bookingDetails: savedBookings[spot.spotNumber] };
@@ -61,11 +47,6 @@ function removeBookingFromStorage(spotNumber) {
   localStorage.setItem('bookings', JSON.stringify(savedBookings));
 }
 
-// ============================================================
-// Lec 23: Session Storage — remembers the filter only for this
-// browser tab/session (clears automatically when the tab closes,
-// unlike localStorage which stays forever)
-// ============================================================
 function saveFilterToSession(filter) {
   sessionStorage.setItem('categoryFilter', filter);
 }
@@ -74,25 +55,20 @@ function loadFilterFromSession() {
   return sessionStorage.getItem('categoryFilter') || 'all';
 }
 
-// ============================================================
-// Lec 17-20: DOM Introduction + DOM Manipulation
-// ============================================================
 function renderGrid(spots) {
-  const gridEl = document.getElementById('parking-grid'); // querySelector-style DOM selection
-  gridEl.innerHTML = ''; // clearing existing elements
+  const gridEl = document.getElementById('parking-grid'); 
+  gridEl.innerHTML = '';
 
-  // Lec 5-6: Loop (for...of)
   for (const spot of spots) {
-    const spotDiv = document.createElement('div'); // creating elements
-    spotDiv.className = `spot ${spot.status}`; // Lec 24: Template literal
-    spotDiv.dataset.spotNumber = spot.spotNumber; // used later to find & highlight this spot
+    const spotDiv = document.createElement('div'); 
+    spotDiv.className = `spot ${spot.status}`;
+    spotDiv.dataset.spotNumber = spot.spotNumber; 
 
     spotDiv.innerHTML = `
       <span>${spot.spotNumber}</span>
       <span class="category">${spot.category}</span>
     `;
 
-    // Lec 21: Event Handling
     spotDiv.addEventListener('click', () => handleSpotClick(spot));
 
     gridEl.appendChild(spotDiv);
@@ -101,9 +77,6 @@ function renderGrid(spots) {
   updateSummary(spots);
 }
 
-// ============================================================
-// Lec 13-14: Higher Order Functions (filter)
-// ============================================================
 function updateSummary(spots) {
   const available = spots.filter((s) => s.status === 'available').length;
   const booked = spots.filter((s) => s.status === 'booked').length;
@@ -111,10 +84,6 @@ function updateSummary(spots) {
     `${available} Available | ${booked} Booked | Total: ${spots.length}`;
 }
 
-// ============================================================
-// Lec 13-14: Higher Order Function (reduce) — adds up the amount
-// from every currently booked spot to show total revenue collected
-// ============================================================
 function updateRevenue() {
   const total = parkingSpots
     .filter((spot) => spot.bookingDetails)
@@ -123,11 +92,6 @@ function updateRevenue() {
   document.getElementById('revenue').textContent = `Total Revenue: ₹${total}`;
 }
 
-// ============================================================
-// Category Filter — uses .filter() (Lec 13-14) on the full
-// parkingSpots array; the underlying data never changes, only
-// what's shown on screen changes
-// ============================================================
 function getFilteredSpots() {
   if (categoryFilter === 'all') {
     return parkingSpots;
@@ -135,8 +99,6 @@ function getFilteredSpots() {
   return parkingSpots.filter((spot) => spot.category === categoryFilter);
 }
 
-// One helper that keeps the grid, summary, and revenue all in sync
-// so we don't have to remember to call three functions every time
 function refreshDisplay() {
   renderGrid(getFilteredSpots());
   updateSummary(parkingSpots); // overall stats, independent of the filter
@@ -149,10 +111,6 @@ document.getElementById('category-filter').addEventListener('change', function (
   refreshDisplay();
 });
 
-// ============================================================
-// Nearest-Gate Finder — uses .filter() then .sort() (Lec 13-14)
-// to find the closest available spot to a given entrance gate
-// ============================================================
 function findNearestSpot(gate) {
   const availableAtGate = parkingSpots.filter(
     (spot) => spot.status === 'available' && spot.nearestGate === gate
@@ -163,7 +121,6 @@ function findNearestSpot(gate) {
     return;
   }
 
-  // Gate A is closest to column 1, Gate B is closest to column 10
   const anchorColumn = gate === 'gateA' ? 1 : 10;
 
   availableAtGate.sort((a, b) => {
@@ -178,7 +135,7 @@ function findNearestSpot(gate) {
 }
 
 function highlightSpot(spotNumber) {
-  // remove any previous highlight first
+  
   document.querySelectorAll('.spot.highlight').forEach((el) => el.classList.remove('highlight'));
 
   const target = document.querySelector(`.spot[data-spot-number="${spotNumber}"]`);
@@ -191,9 +148,6 @@ function highlightSpot(spotNumber) {
 document.getElementById('find-gateA-btn').addEventListener('click', () => findNearestSpot('gateA'));
 document.getElementById('find-gateB-btn').addEventListener('click', () => findNearestSpot('gateB'));
 
-// ============================================================
-// Lec 3-4: Conditional Statements + Lec 21: Event Handling
-// ============================================================
 function handleSpotClick(spot) {
   currentSelectedSpot = spot;
 
@@ -232,9 +186,6 @@ function closeModal() {
   document.getElementById('booking-form').reset(); // Lec 22: Forms
 }
 
-// ============================================================
-// Lec 21-22: Forms, Form Validation, preventDefault, Error Messages
-// ============================================================
 document.getElementById('booking-form').addEventListener('submit', function (e) {
   e.preventDefault(); // Event Object method
 
@@ -258,14 +209,10 @@ document.getElementById('booking-form').addEventListener('submit', function (e) 
   confirmBooking(name, vehicleNumber, duration);
 });
 
-// ============================================================
-// Lec 7-8: Functions, Parameters, Arguments, Return Values
-// ============================================================
 function calculateAmount(pricePerHour, duration) {
   return pricePerHour * duration;
 }
 
-// Lec 15-16: Objects, Properties, Nested Objects
 function confirmBooking(name, vehicleNumber, duration) {
   const spot = currentSelectedSpot;
   const amount = calculateAmount(spot.pricePerHour, duration);
@@ -288,9 +235,6 @@ function confirmBooking(name, vehicleNumber, duration) {
   showStatus(`Spot ${spot.spotNumber} booked for ${vehicleNumber}. Amount: ₹${amount}`);
 }
 
-// ============================================================
-// Checkout / Release — Lec 9-12: Arrays, Array Methods (find)
-// ============================================================
 function releaseSpot() {
   const spotNumber = currentSelectedSpot.spotNumber;
   const spot = parkingSpots.find((s) => s.spotNumber === spotNumber); // Array method: find
@@ -304,12 +248,10 @@ function releaseSpot() {
   showStatus(`Spot ${spotNumber} released.`);
 }
 
-// ---- Utility ----
 function showStatus(message) {
   document.getElementById('status-message').textContent = message;
 }
 
-// ---- Wiring up static event listeners ----
 document.getElementById('modal-close').addEventListener('click', closeModal);
 document.getElementById('release-btn').addEventListener('click', releaseSpot);
 
