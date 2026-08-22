@@ -1,7 +1,7 @@
 
 let parkingSpots = [];       
 let currentSelectedSpot = null; 
-let categoryFilter = 'all';   
+let categoryFilter = 'all';    
 
 async function loadParkingSpots() {
   showStatus('Loading parking spots...');
