@@ -101,13 +101,13 @@ function getFilteredSpots() {
 
 function refreshDisplay() {
   renderGrid(getFilteredSpots());
-  updateSummary(parkingSpots); // overall stats, independent of the filter
+  updateSummary(parkingSpots); 
   updateRevenue();
 }
 
 document.getElementById('category-filter').addEventListener('change', function (e) {
   categoryFilter = e.target.value;
-  saveFilterToSession(categoryFilter); // Lec 23: Session Storage
+  saveFilterToSession(categoryFilter); 
   refreshDisplay();
 });
 
@@ -126,7 +126,7 @@ function findNearestSpot(gate) {
   availableAtGate.sort((a, b) => {
     const distanceA = Math.abs(a.column - anchorColumn);
     const distanceB = Math.abs(b.column - anchorColumn);
-    return distanceA - distanceB; // smallest distance first
+    return distanceA - distanceB; 
   });
 
   const nearest = availableAtGate[0];
@@ -141,7 +141,7 @@ function highlightSpot(spotNumber) {
   const target = document.querySelector(`.spot[data-spot-number="${spotNumber}"]`);
   if (target) {
     target.classList.add('highlight');
-    setTimeout(() => target.classList.remove('highlight'), 3000); // remove after 3 seconds
+    setTimeout(() => target.classList.remove('highlight'), 3000); 
   }
 }
 
@@ -183,20 +183,20 @@ function openDetailsView(spot) {
 
 function closeModal() {
   document.getElementById('booking-modal').classList.add('hidden');
-  document.getElementById('booking-form').reset(); // Lec 22: Forms
+  document.getElementById('booking-form').reset(); 
 }
 
 document.getElementById('booking-form').addEventListener('submit', function (e) {
-  e.preventDefault(); // Event Object method
+  e.preventDefault(); 
 
   const name = document.getElementById('input-name').value.trim();
   const vehicleNumber = document.getElementById('input-vehicle').value.trim().toUpperCase();
-  const duration = Number(document.getElementById('input-duration').value); // Lec 3-4: Type Conversion
+  const duration = Number(document.getElementById('input-duration').value); 
 
   const errorEl = document.getElementById('form-error');
   errorEl.textContent = '';
 
-  // Form validation
+ 
   if (!name || !vehicleNumber || !duration) {
     errorEl.textContent = 'All fields are required.';
     return;
@@ -237,7 +237,7 @@ function confirmBooking(name, vehicleNumber, duration) {
 
 function releaseSpot() {
   const spotNumber = currentSelectedSpot.spotNumber;
-  const spot = parkingSpots.find((s) => s.spotNumber === spotNumber); // Array method: find
+  const spot = parkingSpots.find((s) => s.spotNumber === spotNumber);
 
   spot.status = 'available';
   delete spot.bookingDetails;
