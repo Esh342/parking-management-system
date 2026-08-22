@@ -255,5 +255,4 @@ function showStatus(message) {
 document.getElementById('modal-close').addEventListener('click', closeModal);
 document.getElementById('release-btn').addEventListener('click', releaseSpot);
 
-// ---- Init: load data as soon as the page opens ----
 loadParkingSpots();
