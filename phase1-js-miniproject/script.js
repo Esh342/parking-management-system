@@ -5,7 +5,7 @@ let categoryFilter = 'all';
 async function loadParkingSpots() {
   showStatus('Loading parking spots...');
   try {
-    const response = await fetch('data/parkingLotSeed.json');
+    const response = await fetch('phase1-js-miniproject/data/parkingLotSeed.json') ;
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
     }
@@ -221,4 +221,30 @@ function showStatus(message) {
 document.getElementById('modal-close').addEventListener('click', closeModal);
 document.getElementById('release-btn').addEventListener('click', releaseSpot);
 
+function findNearestAvailableSpot(gate) {
+  const availableSpots = parkingSpots.filter(
+    (spot) =>
+      spot.status === 'available' &&
+      spot.nearestGate === gate
+  );
+
+  if (availableSpots.length === 0) {
+    showStatus(`No available parking spots near ${gate}.`);
+    return;
+  }
+
+  const nearestSpot = availableSpots[0];
+
+  showStatus(
+    `Nearest available spot near ${gate}: ${nearestSpot.spotNumber}`
+  );
+}
+
+document.getElementById('find-gateA-btn').addEventListener('click', function () {
+  findNearestAvailableSpot('gateA');
+});
+
+document.getElementById('find-gateB-btn').addEventListener('click', function () {
+  findNearestAvailableSpot('gateB');
+});
 loadParkingSpots();
